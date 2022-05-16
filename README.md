@@ -20,3 +20,33 @@ ros2 pkg create --build-type ament_cmake cpp_srvcli --dependencies rclcpp exampl
 ros2 pkg create --build-type ament_cmake cpp_pubsub_for_tuto_infa --dependencies rclcpp tutorial_interfaces
 ros2 pkg create --build-type ament_cmake cpp_srvcli_for_tuto_infa --dependencies rclcpp tutorial_interfaces
 
+# 4自定义接口 tutorial_interfaces
+
+# 5more_interfaces
+```python
+ros2 pkg create --build-type ament_cmake more_interfaces
+mkdir more_interfaces/msg
+
+
+bool FEMALE=true
+bool MALE=false
+
+string first_name
+string last_name
+bool gender
+uint8 age
+string address
+
+
+<buildtool_depend>rosidl_default_generators</buildtool_depend>
+
+<exec_depend>rosidl_default_runtime</exec_depend>
+
+<member_of_group>rosidl_interface_packages</member_of_group>
+
+
+find_package(rosidl_default_generators REQUIRED)
+
+```
+
+
