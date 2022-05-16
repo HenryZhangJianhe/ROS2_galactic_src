@@ -14,22 +14,9 @@ rosdep install -i --from-path src --rosdistro galactic -y
 单独构建
 colcon build --packages-select my_package
 
-# 3多机
+# 3service
+ros2 pkg create --build-type ament_cmake cpp_srvcli --dependencies rclcpp example_interfaces
 
-# 4编译安装ros2 
-ubunut18 ele 
+ros2 pkg create --build-type ament_cmake cpp_pubsub_for_tuto_infa --dependencies rclcpp tutorial_interfaces
+ros2 pkg create --build-type ament_cmake cpp_srvcli_for_tuto_infa --dependencies rclcpp tutorial_interfaces
 
---- stderr: foonathan_memory_vendor
-Cloning into 'foo_mem-ext'...
-Note: checking out 'v0.7-1'.
-
-You are in 'detached HEAD' state. You can look around, make experimental
-changes and commit them, and you can discard any commits you make in this
-state without impacting any branches by performing another checkout.
-
-If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -b with the checkout command again. Example:
-
-  git checkout -b <new-branch-name>
-
-HEAD is now at 19ab075 Release 0.7-1
